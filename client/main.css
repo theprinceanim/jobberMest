@@ -1,0 +1,145 @@
+.productbox {
+    background-color:#ffffff;
+	padding:10px;
+	margin:10px;
+
+	-webkit-box-shadow: 0 8px 6px -6px  #999;
+	   -moz-box-shadow: 0 8px 6px -6px  #999;
+	        box-shadow: 0 8px 6px -6px #999;
+}
+
+.producttitle {
+    font-weight:bold;
+	padding:5px 0 5px 0;
+}
+
+.productbody {
+	padding:5px 0 5px 0;
+}
+.productprice {
+	border-top:1px solid #dadada;
+	padding-top:5px;
+}
+
+.pricetext {
+	font-weight:bold;
+	font-size:1.4em;
+}
+
+
+
+html { height: 100%; }
+
+body {
+  height: 100%;
+  background: url(http://paolorotolo.github.io/android-studio/resources/img/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachement: fixed;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+}
+  /*overflow: hidden;*/
+
+.melcome{
+	height: 200%;
+  background: url(http://paolorotolo.github.io/android-studio/resources/img/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachement: fixed;
+  font-family: Roboto, sans-serif;
+}
+.nav-wrapper {
+  position: relative;
+}
+.nav {
+  position: fixed;
+  right: 0;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+.nav a {
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  color: #333333;
+  text-decoration: none;
+}
+.bav {
+  position: fixed;
+  left: 0;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+.bav a {
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  color: #812D5D;
+  text-decoration: none;
+}
+.bav a:hover {
+  text-decoration: underline;
+}
+.bav a.active {
+  color: #333;
+}
+.nav a:hover {
+  text-decoration: underline;
+}
+.nav a.active {
+  color: #1F5954;
+}
+
+.welcome-wrapper {
+  position: absolute;
+  top: 25%;
+  width: 100%;
+}
+
+.welcome {
+  position: absolute;
+  clear: both;
+  width: 100%;
+  padding: 3rem 5rem;
+  font-size: 3rem;
+  font-weight: 100;
+  color: #111;
+  background-color: rgba(255,255,255,0.3);
+}
+
+.message {
+  float: left;
+  width: 50%;
+}
+
+.message h1 {
+  font-size: 6rem;
+  line-height: 6rem;
+  font-weight: 300;
+  margin: 0;
+}
+
+.message strong {
+  font-weight: 300;
+}
+
+.footer-wrapper { position: relative; }
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: #333;
+  font-size: 0.6rem;
+  font-weight: 300;
+  line-height: 2rem;
+}
+.footer a {
+  color: #333;
+  text-decoration: none;
+}
+
+
+
+

@@ -1,0 +1,45 @@
+<template name="masterLayout">
+{{> navbar}}
+
+{{> yield}}
+
+{{> autoformModals}}
+
+</template>
+
+<template name="navbar">
+
+
+
+<div class="nav-wrapper">
+  <nav class="nav" >
+    <a href="{{pathFor 'dashboard'}}">Dashboard</a>
+    <a> {{> loginButtons}}</a>
+    
+     <a href="{{pathFor 'home'}}" class="active">Home</a>
+     
+       
+
+        <a href="{{pathFor 'projects'}}">Projects</a>
+         <a href="{{pathFor 'about'}}">About</a>
+          <a href="{{pathFor 'form'}}">Add Job</a>
+        
+
+           <!--  {{#afModal class="btn" collection="Projects" operation="insert"}}
+            Add Job
+            {{/afModal}} -->
+
+           
+
+
+    
+  </nav>
+</div>
+
+
+
+
+            <!-- 
+        -->
+  
+</template>

@@ -1,0 +1,95 @@
+<template name="projectDetail">
+<br>
+<br>
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+      <a href="{{pathFor 'projects'}}">Back</a>      
+        </div>
+	<div class="col-md-6 column productbox">
+     <img src="http://mestghana.wpengine.com/wp-content/themes/wpbootstrap/images/mest-logo.png" class="img-responsive">
+    <div class="producttitle">{{project.title}}<h5>({{project.category}})</h5></div>
+    <div class="producttitle">Summary</div>
+    <div class="productbody">{{project.summary}}</div>
+    <div class="productbody"><img src="{{getImg project.picture}}"></div>
+    
+    <div class="producttitle">Contact</div>
+    <div class="productbody">{{project.contact}}</div>
+    <div class="producttitle">Payment</div>
+    <div class="productbody">${{project.payment}}/{{project.paymentType}}</div>
+    <!-- <div class="productbody">{{project.paymentType}}</div> -->
+    <div class="productbody">{{project.dueDate}}</div>
+    <div class="productprice">
+
+    <div class="pull-right">
+
+    <!-- <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" class="btn btn-success" role="button">APPLY</a> -->
+<!--     <a href="{{pathFor 'projectDetail' _id=_id}}" class="btn btn-primary btn-xs">{{#afModal class="btn-default" collection="" operation="insert"}}
+            APPLY
+            {{/afModal}}
+
+            {{> autoformModals collection="Projects" id="insertProject" type="insert"}}</a> -->
+        <!--     <a href="{{pathFor 'applicationForm'}}">Apply</a> -->
+
+
+        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
+        Apply
+        </button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+       {{> quickForm id="insertApplication" collection="Applications" type="insert"}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+   
+    
+
+    <div class="pricetext">
+    <!-- {{#if currentUser}} -->
+    <!-- <h1>owner: {{project.owner}}</h1>
+    <h1>User._id: {{User._id}}</h1> -->
+    {{#if $eq project.owner User._id}}
+    {{#quickRemoveButton collection="Projects" _id=this._id onError=onError onSuccess=onSuccess beforeRemove=beforeRemove class="btn btn-danger"}}Delete Me{{/quickRemoveButton}}
+
+    <!-- {{#afModal class="btn btn-primary" collection="Projects" operation="update" doc=_id}}
+     Update post
+    {{/afModal}} -->
+
+    <hr/>
+   
+    {{#each applications}}
+    <div class="panel panel-default">
+        <div class="panel-body">
+            {{description}}
+            {{contact}}
+        </div>
+    </div>
+    {{/each}}
+    {{else}}
+        <div class="producttitle">Number of Applicants</div>
+        <div class="productbody">{{applicationsCount}}</div>
+    {{/if}}
+    
+        
+   <!--  {{/if}} -->
+		</div></div>
+       </div>
+
+       <div class="col-md-3"></div>
+    </div>
+        
+    </div>
+</template>	

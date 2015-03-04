@@ -1,0 +1,24 @@
+<template name="form">
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+		</div>
+            {{#if currentUser}}
+	 		<div class="col-md-5 productbox">
+	 		<br>
+             
+            {{> quickForm collection="Projects" id="addProject" type="insert"}}
+            
+            </div>
+            {{else}}
+            <center>
+            <br>
+            <br>
+            <br>
+            <h1>Only Signed-in Users can create Jobs</h1>
+            </center>
+            {{/if}}
+            <div class="col-md-4"></div>
+        </div>
+ </div>
+</template>

@@ -1,0 +1,60 @@
+<template name="projects">
+
+<div class="melcome">
+<!-- creating links to the categories -->
+<div class="nav-wrapper">
+  <nav class="bav" >
+
+        <a href="{{pathFor 'projects'}}">All projects</a>
+
+        <a href="{{pathFor 'projectsCategory' category='business'}}">Business-{{business}}</a>
+
+        <a href="{{pathFor 'projectsCategory' category='communication'}}">Communication-{{communication}}</a>
+
+        <a href="{{pathFor 'projectsCategory' category='technology'}}">Technology-{{technology}}</a>
+         </nav>   
+       
+    </div>
+    
+
+<div class="container">
+<div class="row">
+<br>
+<br>
+ {{#each projects}}
+ <div class="col-md-4 column productbox">
+     <img src="http://mestghana.wpengine.com/wp-content/themes/wpbootstrap/images/mest-logo.png" class="img-responsive">
+    <div class="producttitle">{{title}}</div>
+    <div class="productbody">{{summary}}</div>
+    <div class="productprice">
+
+    <div class="pull-right"><!-- <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" class="btn btn-success" role="button">APPLY</a> --> <a href="{{pathFor 'projectDetail' _id=_id}}" class="btn btn-primary">Read more</a>
+    </div><div class="pricetext">${{payment}}
+  <!--   {{#if isOwner}} -->
+    {{#if $eq owner User._id}}
+    {{#quickRemoveButton collection="Projects" _id=this._id onError=onError onSuccess=onSuccess beforeRemove=beforeRemove class="btn btn-danger"}}Delete Me{{/quickRemoveButton}}
+
+	{{#afModal class="btn btn-primary" collection="Projects" operation="update" doc=_id}}
+ 	 Update post
+	{{/afModal}}
+    {{/if}}
+		</div>
+        </div>
+    
+    </div>
+
+    {{else}}
+    <li>No projects yet</li>
+   
+    {{/each}}
+
+    	</div>
+        
+
+    </div>
+
+</div>
+    
+</template>
+
+
